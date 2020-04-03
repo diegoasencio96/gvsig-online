@@ -111,3 +111,6 @@ more-itertools<6.0.0
 
 django-tinymce==2.8.0
 
+
+# gunicorn web server
+gunicorn==19.9.0

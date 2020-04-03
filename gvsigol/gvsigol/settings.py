@@ -227,11 +227,11 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
         #'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'gvsigonline_v2',
+        'NAME': os.getenv('POSTGRES_DB', 'gvsigonline_v2'),
         'USER': DB_USER_DEVEL, # WARNING: Do not write any password here!!!! Store them in 'settings_passwords.py' for local development
         'PASSWORD': DB_PW_DEVEL, # WARNING: Do not write any password here!!!! Store them in 'settings_passwords.py' for local development
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'HOST': os.getenv('POSTGRES_HOST', 'postgresql_bd'),
+        'PORT': os.getenv('POSTGRES_PORT', '5432'),
     }
 }
 POSTGIS_VERSION = (2, 3, 3)
